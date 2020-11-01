@@ -208,8 +208,9 @@
               this._can = document.createElement("canvas");
               this._ctx = this._can.getContext("2d");
               var tex = this._tex = new THREE.Texture(this._can);
+              // テクスチャ初期設定含む
               var mat = this._mat = new THREE.MeshBasicMaterial({ map: tex, transparent: true, alphaTest: 0.4, side: THREE.DoubleSide });
-              var box = this._box = new THREE.Mesh(new THREE.BoxBufferGeometry(1, 1, 1), mat);
+              var box = this._box = new THREE.Mesh(new THREE.BoxBufferGeometry(1, 1, 1), new THREE.MeshNormalMaterial());
               //scene.add(box);
               
               this._drawFrame();
@@ -372,6 +373,7 @@
       // mesh.position.y = 1.0;
       // scene.add(mesh);
       const mesh = textAliveMng._threeMng._box;
+      mesh.position.y = 1.0
       scene.add(mesh);
 
       const clock = new THREE.Clock();
