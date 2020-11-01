@@ -184,13 +184,13 @@
 
               //
               // THREE.js (Renderer, Scene, Camera) の初期化
-              //        
+              //
               var renderer = new THREE.WebGLRenderer( { antialias: true, alpha: false } );
               renderer.setPixelRatio(window.devicePixelRatio);
               renderer.setSize(w, h);
               document.body.appendChild(renderer.domElement);
 
-              var col   = 0xffff00;
+              var col   = 0xeeeeee;
               var scene = new THREE.Scene();
               scene.background = new THREE.Color(col);
 
@@ -207,19 +207,16 @@
               // 歌詞表示用ボックスの生成
               this._can = document.createElement("canvas");
               this._ctx = this._can.getContext("2d");
-              var tex = this._tex = new THREE.Texture(this._can);
-              var mat = this._mat = new THREE.MeshBasicMaterial({
-                map: tex,
-                color: 0x48d1cc,
-                blending: THREE.NormalBlending,
-                side: THREE.DoubleSide
-              });
-              //MeshBasicMaterial({ map: tex, transparent: true, alphaTest: 0.4, side: THREE.DoubleSide });
-              var box = this._box = new THREE.Mesh(new THREE.BoxBufferGeometry(1, 1, 1), mat);
+              var tex = this._tex = new THREE.Texture(this._ctx);
+              var mat = this._mat = new THREE.MeshBasicMaterial({ map: tex, transparent: true, alphaTest: 0.4, side: THREE.DoubleSide });
+              var box = this._box = new THREE.Mesh(new THREE.BoxBufferGeometry(1, 1, 1), this._mat);
               this._box.position.set(0.0, 1.0, 0.0);
+<<<<<<< HEAD
               
               //scene.add(box);
                 
+=======
+>>>>>>> 6f9c91e751331101a7ac4a93b319cdbb07df7084
               this._drawFrame();
           }
 
@@ -269,6 +266,7 @@
               // テクスチャの更新
               if (this._tk != tk) this._tex.needsUpdate = true;
               this._tk = tk;
+
 
               // ボックスの回転
               this._box.rotation.set(position / 1234, position / 2345, position / 3456);
