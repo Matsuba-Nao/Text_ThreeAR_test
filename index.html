@@ -218,7 +218,6 @@
               //MeshBasicMaterial({ map: tex, transparent: true, alphaTest: 0.4, side: THREE.DoubleSide });
               var box = this._box = new THREE.Mesh(new THREE.BoxBufferGeometry(1, 1, 1), this._mat);
               this._box.position.set(0.0, 1.0, 0.0);
-                            
               this._drawFrame();
           }
 
@@ -249,7 +248,7 @@
               if (! this._lyrics) return;
 
               // 外枠を残してキャンバスをクリア
-              this._ctx.clearRect(8, 8, this._can.width - 16, this._can.height - 16);
+              //this._ctx.clearRect(8, 8, this._can.width - 16, this._can.height - 16);
               var tk = "";
 
               for (var i = 0, l = this._lyrics.length; i < l; i ++)
@@ -268,6 +267,7 @@
               // テクスチャの更新
               if (this._tk != tk) this._tex.needsUpdate = true;
               this._tk = tk;
+
 
               // ボックスの回転
               this._box.rotation.set(position / 1234, position / 2345, position / 3456);
