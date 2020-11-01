@@ -65,7 +65,7 @@
                       },
                       // 歌詞テキストを固定
                       altLyricsUrl: TextAliveApp.stringToDataUrl(`
-                          ほんとのコト　ほんとのキモチだけ　伝えられたらいいのにね　なんて
+                          あ　ああああああ　あああああああ　あああああ　ああああ　ああああ
                           ときどき　考えたりするけど　そうそう　うまくはいかないみたいね
                           
                           たとえば　そう　愛想よく笑うあの子の真似とかしたりもするけど
@@ -210,6 +210,7 @@
               var tex = this._tex = new THREE.Texture(this._can);
               var mat = this._mat = new THREE.MeshBasicMaterial({
                 map: tex,
+                transparent: true,
                 color: 0x48d1cc,
                 blending: THREE.NormalBlending,
                 side: THREE.DoubleSide
@@ -217,9 +218,7 @@
               //MeshBasicMaterial({ map: tex, transparent: true, alphaTest: 0.4, side: THREE.DoubleSide });
               var box = this._box = new THREE.Mesh(new THREE.BoxBufferGeometry(1, 1, 1), mat);
               this._box.position.set(0.0, 1.0, 0.0);
-              
-              //scene.add(box);
-              
+                            
               this._drawFrame();
           }
 
