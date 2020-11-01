@@ -208,7 +208,7 @@
               this._can = document.createElement("canvas");
               this._ctx = this._can.getContext("2d");
               var tex = this._tex = new THREE.Texture(this._can);
-              var mat = this._mat = new THREE.MeshMatcapMaterial({map: tex, color: 0x48d1cc, side: THREE.DoubleSide});//MeshBasicMaterial({ map: tex, transparent: true, alphaTest: 0.4, side: THREE.DoubleSide });
+              var mat = this._mat = new THREE.MeshMatcapMaterial({map: tex, color: 0x48d1cc});//MeshBasicMaterial({ map: tex, transparent: true, alphaTest: 0.4, side: THREE.DoubleSide });
               var box = this._box = new THREE.Mesh(new THREE.BoxBufferGeometry(1, 1, 1), mat);
               this._box.position.set(0.0, 1.0, 0.0);
               
