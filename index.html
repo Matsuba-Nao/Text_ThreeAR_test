@@ -209,7 +209,7 @@
               this._ctx = this._can.getContext("2d");
               var tex = this._tex = new THREE.Texture(this._can);
               var mat = this._mat = new THREE.MeshBasicMaterial({
-                //map: this._tex,
+                map: tex,
                 transparent: true,
                 color: 0x48d1cc,
                 blending: THREE.NormalBlending,
