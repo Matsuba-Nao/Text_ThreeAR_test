@@ -208,9 +208,8 @@
               this._can = document.createElement("canvas");
               this._ctx = this._can.getContext("2d");
               var tex = this._tex = new THREE.Texture(this._can);
-              // テクスチャ初期設定含む
               var mat = this._mat = new THREE.MeshBasicMaterial({ map: tex, transparent: true, alphaTest: 0.4, side: THREE.DoubleSide });
-              var box = this._box = new THREE.Mesh(new THREE.BoxBufferGeometry(1, 1, 1), new THREE.MeshNormalMaterial());
+              var box = this._box = new THREE.Mesh(new THREE.BoxBufferGeometry(1, 1, 1), mat);
               //scene.add(box);
               
               this._drawFrame();
