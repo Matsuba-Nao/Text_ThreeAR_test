@@ -62,12 +62,15 @@
         changeMatrixMode: 'cameraTransformMatrix'
       });
 
-      const mesh = new THREE.Mesh(
-        new THREE.CubeGeometry(1, 1, 1),
-        new THREE.MeshNormalMaterial(),
-      );
-      mesh.position.y = 1.0;
-      scene.add(mesh);
+      const textAliveMng = new TextAliveMng();
+
+      // const mesh = new THREE.Mesh(
+      //   new THREE.CubeGeometry(1, 1, 1),
+      //   new THREE.MeshNormalMaterial(),
+      // );
+      // mesh.position.y = 1.0;
+      // scene.add(mesh);
+      scene.add(textAliveMng._threeMng.box);
 
       const clock = new THREE.Clock();
       requestAnimationFrame(function animate(){
@@ -90,7 +93,7 @@
 
               this._initPlayer();
               
-              window.addEventListener("resize", () => this._resize());
+              //window.addEventListener("resize", () => this._resize());
               this._update();
           }
           // プレイヤー初期化
@@ -99,8 +102,6 @@
               const { Player } = TextAliveApp;
               var player = new Player({
                   app: {
-                      appAuthor: "daniwell",
-                      appName: "Char Cube",
                       parameters: [
                           {
                               title: "テキスト色",
@@ -340,7 +341,7 @@
               // ボックスの回転
               this._box.rotation.set(position / 1234, position / 2345, position / 3456);
 
-              this._renderer.render(this._scene, this._camera);
+              //this._renderer.render(this._scene, this._camera);
           }
           // リサイズ
           resize ()
