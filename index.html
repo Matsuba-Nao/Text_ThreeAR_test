@@ -248,7 +248,7 @@
               if (! this._lyrics) return;
 
               // 外枠を残してキャンバスをクリア
-              this._ctx.clearRect(8, 8, this._can.width - 16, this._can.height - 16);
+              this._ctx.fillRect(8, 8, this._can.width - 16, this._can.height - 16);
               var tk = "";
 
               for (var i = 0, l = this._lyrics.length; i < l; i ++)
@@ -299,7 +299,7 @@
               ctx.lineWidth = 8;
               ctx.fillStyle = 'red';
               ctx.rect(0, 0, can.width, can.height);
-              ctx.fillRect(0, 0, can.width, can.height)
+              
               ctx.stroke();
               this._tex.needsUpdate = true;
           }
