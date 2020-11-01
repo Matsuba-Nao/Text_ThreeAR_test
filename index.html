@@ -207,6 +207,7 @@
               // 歌詞表示用ボックスの生成
               this._can = document.createElement("canvas");
               this._ctx = this._can.getContext("2d");
+              this._ctx.fillStyle = 'blue';
               var tex = this._tex = new THREE.Texture(this._can);
               var mat = this._mat = new THREE.MeshBasicMaterial({
                 map: tex,
